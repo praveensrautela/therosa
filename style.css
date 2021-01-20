@@ -1,0 +1,900 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Herr+Von+Muellerhoff&family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Herr+Von+Muellerhoff&family=Source+Sans+Pro&display=swap');
+*,
+*::before,
+*::after{
+	margin: 0;padding: 0;box-sizing: border-box;
+}
+
+:root{
+	--main_font: 'Source Sans Pro', sans-serif;
+	--secondary_font: 'Herr Von Muellerhoff', cursive;
+	--body_font: 'Cabin', sans-serif;
+	--main_font_color_dark: #252525;
+	--secondary_font_color: #c59d5f;
+	--body_font_color: #515151;
+}
+
+html{
+	font-family: var(--body_font);
+	font-size: .7rem;
+	color: var(--body_font_color);
+	scroll-behavior: smooth;
+}
+
+
+section{
+	padding: 3.9rem 0;
+}
+
+img{
+	width: 100%;
+	max-width: 100%;
+}
+
+a{
+	text-decoration: none;
+}
+p{
+	font-size: 1.6rem;
+}
+
+.container{
+	width: 100%;
+	max-width: 122.5rem;
+	margin: 0 auto;
+	padding: 0 2.4rem;
+
+}
+
+/* header */
+
+header{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, .5), transparent);
+
+
+}
+.logo{
+
+	background: #fff;
+}
+
+.nav{
+	height: 7.2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.menu_toggle{
+	color: #fff;
+	font-size: 2.2rem;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 2.5rem;
+	cursor: pointer;
+	z-index: 1500;
+}
+
+.fa-times{
+	display: none;
+}
+
+.nav-list{
+	list-style: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 80%;
+	height: 100vh;
+	background-color: var(--main_font_color_dark);
+	padding: 4.4rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	z-index: 1250;
+	transform: translateX(-100%);
+	transition: transform: .5s;
+
+}
+
+.nav::before{
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, .8);
+	z-index: 1000;
+	opacity: 0;
+	transform: scale(0);
+	transition: opacity .5s;
+
+}
+
+.open .fa-times{
+	display: block;
+}
+.open .fa-bars{
+	display: none;
+}
+
+.open .nav-list{
+	transform: translateX(0);
+
+}
+
+.open .nav::before{
+	opacity: 1;
+	transform: scale(1);
+}
+.nav-item{
+	/* border-bottom: 2px solid rgba(255, 255, 255, .3); */
+
+}
+
+.nav-link{
+	display: block;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.6rem;
+	letter-spacing: 2px;
+	transition: color .5s;
+
+}
+
+.nav-link:hover{
+	color: var(--secondary_font_color);
+
+}
+
+
+
+/* hero */
+
+
+
+.hero{
+	width: 100%;
+	height: 100vh;
+	background: url('hero.jpg');
+	  background-attachment: fixed;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+.sub_headline{
+	font-size: 8.5rem;
+	font-family: var(--secondary_font);
+	color: var(--secondary_font_color);
+	font-weight: 100;
+	line-height: .4;
+	letter-spacing: 2px;
+
+}
+.first_letter{
+	text-transform: uppercase;
+	font-size: 10.3rem;
+}
+
+.headline{
+	color: #fff;
+	font-size: 3.7rem;
+	font-family: var(--main_font);
+	font-weight: 900;
+	text-transform: uppercase;
+	letter-spacing: .5rem;
+	margin-right: .5rem;
+
+}
+
+.separator{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.line{
+	width: 100%;
+	max-width: 8.4rem;
+	height: .25rem;
+	background-color: #fff;
+	position: relative;
+
+}
+
+.line_right::before,
+.line_left::before{
+	content: "";
+	position: absolute;
+	border: .6rem solid transparent;
+	top: 50%;
+	transform: translateY(-50%);
+
+}
+
+.line_right::before{
+	border-right-color: #fff;
+	right: 0;
+
+}
+.line_left::before{
+	border-left-color: #fff;
+	left: 0;
+
+}
+
+.asterisk{
+	font-size: 1.2rem;
+	color: var(--secondary_font_color);
+	margin: 0 1.6rem;
+}
+
+.headline_discription{
+	color: #fff;
+	font-size: 1.4rem;
+	font-weight: 400;
+	text-transform: uppercase;
+	margin-bottom: 1.2rem;
+	letter-spacing: 3px;
+	margin-right: -3px;
+}
+
+.btn{
+	display: inline-block;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-right: -2px;
+}
+
+.cta_btn{
+	font-size: 1.1rem;
+	background-color: #fff;
+	padding: .9rem 1.8rem;
+	color: var(--body_font_color);
+	border-radius: .4rem;
+	transition: background-color .5s;
+
+
+}
+
+.cta_btn:hover,
+.cta_btn:focus{
+	color: #fff;
+	background-color: var(--secondary_font_color);
+}
+
+
+/* discover our story */
+
+.global_headline{
+	text-align: center;
+	margin-top: 3.9rem;
+}
+
+.discover_our_story .global_headline{
+	margin-top: 6.9rem;
+}
+
+.global_headline .asterisk{
+	color: var(--body_font_color);
+	margin: 2.4rem 0;
+}
+.headline_dark{
+	color: var(--main_font_color_dark);
+	letter-spacing: .7rem;
+	margin-right: .7rem;
+}
+
+.global_headline .sub_headline{
+	letter-spacing: -.1rem;
+	line-height: .42rem;
+
+}
+
+.restaurent_info{
+	text-align: center;
+
+}
+.restaurent_discription{
+	margin-bottom: 3rem;
+}
+.restaurent_discription p{
+	line-height: 1.6rem;
+	margin-bottom: 2.4rem;
+}
+
+.body_btn{
+	font-size: 1.5rem;
+	color: var(--secondary_font_color);
+	position: relative;
+	transition: color .5s;
+}
+.body_btn::before{
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0rem;
+	background-color: var(--secondary_font_color);
+	transition: background-color .5s;
+	height: 2px;
+	width: 100%;
+}
+
+.body_btn:hover,
+.body_btn:focus{
+	color: var(--main_font_color_dark);
+}
+
+.body_btn:hover::before,
+.body_btn:focus::before{
+	background-color: var(--main_font_color_dark);
+}
+
+/* testfull recepis */
+
+
+.testfull_recipes{
+	background: url('frontpage-menu.jpg') center no-repeat;
+	  background-attachment: fixed;
+	background-size: cover;
+}
+
+.between{
+	min-height: 65vh;
+	display: flex;
+	align-items: center;
+}
+
+
+/* discover our menu */
+
+.image-group{
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	grid-gap: 1.5rem;
+}
+
+.discover_our_menu .restaurent_discription{
+	padding-top: 3rem;
+	margin-bottom: 0;
+}
+
+/* the perfect blend */
+
+.perfect_blend{
+	background: url('make-a-reservation.jpg') center no-repeat;
+	  background-attachment: fixed;
+	background-size: cover;
+}
+
+/* footer  */
+
+footer{
+	padding: 7.9rem 0;
+	background-color: #121212;
+	color: white;
+	text-align: center;
+	position: relative;
+}
+
+.back-to-top{
+	width: 7rem;
+	height: 7rem;
+	background-color: #121212;
+	position: absolute;
+	top: -3rem;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 50%;
+}
+.back-to-top i{
+	display: block;
+	color: #fff;
+	font-size: 2rem;
+	padding: 2rem;
+}
+.footer-containt{
+	/* overflow: hidden; */
+}
+
+.footer-containt h4{
+	font-size: 1.9rem;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin-bottom: 3rem;
+}
+
+.footer-containt .asterisk{
+	margin: 2.4rem 0;
+
+}
+
+.footer-containt-about{
+	margin-bottom: 5.4rem;
+}
+
+.footer-containt-about p{
+	line-height: 2;
+}
+
+.social-icons{
+	list-style: none;
+	margin-bottom: 5.4rem;
+	display: flex;
+	justify-content: center;
+
+}
+
+.social-icons i{
+	font-size: 2rem;
+	color: #fff;
+	padding: .8rem 2rem;
+	opacity: .5;
+	transition: color .5s;
+}
+
+.social-icons i:hover,
+.social-icons:focus{
+	color: var(--secondary_font_color);
+}
+
+.newsletter-form{
+	width: 100%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+.newsletter-input{
+	width: 100%;
+	max-width: 25rem;
+	padding: 1rem;
+	border-radius: .4rem;
+}
+
+.newsletter-btn{
+	background-color: transparent;
+	border: none;
+	color: var(--main_font_color_dark);
+	font-size: 2.5rem;
+	cursor: pointer;
+	padding: 1px .6rem;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	margin-left: 19.5rem;
+}
+
+
+
+
+/* media query  */
+
+@media screen and (min-width: 900px){
+
+	section{
+		padding: 7.9rem;
+	}
+	.menu_toggle{
+		display: none;
+	}
+	.nav{
+		justify-content: space-between;
+	}
+	.nav-list{
+		position: initial;
+		width: initial;
+		height: initial;
+		background-color: transparent;
+		padding: 0;
+		justify-content: initial;
+		flex-direction: row;
+		transform: initial;
+		transition: initial;
+	}
+
+	.nav-item{
+		margin: 0 2.4rem;
+		border: none;
+	}
+
+	.nav-item:last-child{
+		margin-right: 0;
+	}
+
+	.nav-link{
+		font-size: 1.3rem;
+	}
+	.active{
+		position: relative;
+	}
+	
+	.active a{
+		color: var(--secondary_font_color);
+	}
+
+	.active::before{
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		background: #fff;
+		left: 0;
+		bottom: -3px;
+	}
+
+	.sub_headline{
+		font-size: 10rem;
+	}
+	.first_letter{
+		font-size: 12.2rem;
+	}
+
+	.headline{
+		font-size: 4.7rem;
+		letter-spacing: .8rem;
+	}
+	.line{
+		max-width: 11.4rem;
+	}
+
+	.restaurent_info{
+		display: flex;
+		align-items: center;
+	}
+	.restaurent_info div{
+		flex: 1;
+	}
+	.padding-right{
+		padding-right: 7rem;
+	}
+
+	.footer-containt{
+		max-width: 77.5rem;
+		margin: auto;
+
+	}
+	.footer-containt-about{
+		max-width: 51.3rem;
+		margin: 0 auto 5.4rem;
+	}
+	.footer-content-divider{
+		display: flex;
+		justify-content: space-between;
+	}
+	.social-media,
+	.newsletter-form{
+		width: 100%;
+		max-width: 27.3rem;
+		margin: 0 1rem;
+	}
+	.social-icons i{
+		opacity: 1;
+	}
+	.newsletter-btn{
+		margin-left: 11.5rem;
+	}
+
+
+
+
+	.reservation_table{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		
+	}
+
+.about_reservation_content{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+	
+}
+
+
+
+
+
+
+
+/* the reservation page */
+
+.reservation{
+	width: 100%;
+	height: 60vh;
+	background: url('contact-food.jpg');
+	  background-attachment: fixed;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	text-align: center;
+
+}
+
+.page_sub_headline{
+	font-size: 5.5rem;
+	font-family: var(--secondary_font);
+	color: var(--secondary_font_color);
+	font-weight: 100;
+	line-height: .4;
+	letter-spacing: 1px;
+
+}
+
+.page_sub_headline .first_letter{
+	text-transform: uppercase;
+	font-size: 7.5rem;
+}
+
+.page_headline{
+	color: #fff;
+	font-size: 1.7rem;
+	font-family: var(--main_font);
+	font-weight: 900;
+	text-transform: uppercase;
+	letter-spacing: .5rem;
+	margin-right: .5rem;
+
+}
+
+.page_headline_discription{
+	color: #fff;
+	text-transform: uppercase;
+	margin-bottom: 1.2rem;
+	letter-spacing: 1px;
+	margin-right: -3px;
+}
+.page_headline_discription .single_animation h5{
+	font-size: .8rem;
+}
+
+
+/* make online reservation */
+
+
+.make_online_reservation{
+	align-items: center;
+	text-align: center;
+}
+
+.reservation_table_content{
+	padding-bottom: 3px;
+}
+.reservation_table_content h3{
+	font-size: 1.6rem;
+	letter-spacing: 1px;
+}
+.reservation_table_content p{
+	font-size: .8rem;
+}
+
+.reservation_date{
+	padding: .5rem;
+}
+
+.time-select,.person-select, input[type=date]{
+	text-align: center;
+	margin: 2rem auto;
+
+}
+
+select{
+	width: 130px;
+}
+.reservationbtn{
+	background-color: var(--main_font_color_dark);
+	color: white;
+}
+
+/* reservation content page */
+
+.reservation_content{
+	margin: 1rem 3rem;
+}
+
+.reservation_content h4{
+	font-family: var(--main_font);
+	font-weight: 800;
+	letter-spacing: .4rem;
+	padding: .2rem 0;
+}
+
+.reservation_content p{
+	/* font-family: var(--main_font); */
+	font-size: 1.2rem;
+}
+
+/* coffidiv */
+.coffidiv{
+	background: url('vk-drinking.jpg') center no-repeat;
+	  background-attachment: fixed;
+	background-size: cover;
+}
+.restaurent_discription{
+	padding-left: 5rem;
+}
+
+
+
+/* contact page */
+
+.contact{
+	width: 100%;
+	height: 50vh;
+	background: url('contact-food.jpg');
+	  background-attachment: fixed;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+.contact-social-icon i{
+	font-size: 2.4rem;
+	padding: 1rem 3rem 1rem 0rem;
+	transition: color .5s;
+}
+
+.contact-social-icon i:hover{
+	color: var(--secondary_font_color);
+}
+.contact-form{
+	margin-top: 2rem;
+}
+
+.contact-form label{
+	width: 50%;
+	font-style: italic;
+	padding: 0rem 2rem;
+	text-transform: uppercase;
+}
+
+.contact-form input{
+	width: 100%;
+	outline: none;
+	padding: .2rem 2rem;
+	margin-bottom: 2rem;
+	text-transform: uppercase;
+
+	
+}
+
+.contact-form textarea{
+	width: 100%;
+	outline: none;
+	padding: .2rem 2rem;
+	margin-bottom: 2rem;
+	text-transform: uppercase;
+}
+
+/* contact us end */
+
+@media screen and (min-width: 900px){
+
+	.contact_us{
+		display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	}
+
+
+
+
+}
+
+
+
+
+
+
+/* menu page */
+
+.our-menu{
+	text-align: center;
+	padding: 0 .3rem;
+}
+
+.our-menu-content h3{
+	font-size: 3rem;
+	text-transform: uppercase;
+	font-family: var(--main_font);
+	font-weight: bold;
+}
+
+.our-menu-content p{
+	font-size: 1rem;
+	text-transform: uppercase;
+	font-family: var(--main_font);
+}
+.our-menu-gallery{
+	margin-top: 4rem;
+}
+
+.gallery-div{
+		margin:2rem auto; 
+}
+.gallery-div a{
+	margin: 1rem 0;
+
+}
+
+
+.our-kitchen-expert{
+	text-align: center;
+	background: #eee;
+}
+
+.expert-div{
+	margin: 2rem;
+}
+
+.expert-img{
+	margin: 2rem;
+}
+.expert-img img{
+	height: 350px;
+	width: 100%;
+	cursor: pointer;
+}
+
+.expert-img p{
+	font-size: 1.5rem;
+	margin: 1rem;
+	transition: color .5s;
+	cursor: pointer;
+}
+.expert-img p:hover{
+	color: var(--secondary_font_color);
+}
+
+@media screen and (min-width: 900px){
+
+	.our-menu .our-menu-content h3{
+	font-size: 5rem;
+	letter-spacing: 4px;
+}
+
+
+.our-menu-gallery{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1rem;
+}
+.gallery-div{
+		margin:auto; 
+}
+.gallery-div img{
+	height: 250px;
+	width: 100%;
+}
+.gallery-div a{
+	font-size: 1rem;
+
+}
+
+.expert-div{
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+}
+
+.expert-img img{
+	height: 300px
+	width: 100%;
+	cursor: pointer;
+}
+
+
+}
